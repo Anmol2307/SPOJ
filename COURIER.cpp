@@ -158,10 +158,6 @@ void calc () {
 }
 
 int main () {
-#ifndef ONLINE_JUDGE
-  IN("/home/tigran/Desktop/Debug/input.txt");
-  OUT("/home/tigran/Desktop/Debug/output.txt");
-#endif
   int test_case;
   scanf("%d", &test_case);
   while(test_case--) {
