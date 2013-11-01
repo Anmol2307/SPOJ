@@ -1,5 +1,3 @@
-uthor: Hakobyan Tigran
- */
 
 #pragma comment(linker, "/STACK:60777216") 
 #define printTime(begin, end) printf("%.3lf\n", (double)(end - begin) / (double)CLOCKS_PER_SEC) 
