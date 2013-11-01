@@ -30,7 +30,7 @@ uthor: Hakobyan Tigran
 #include <cassert>
 #include <valarray>
 
- using namespace std;
+using namespace std;
 
 #define IN(a) freopen(a, "r", stdin)
 #define OUT(a) freopen(a, "w", stdout)
@@ -51,29 +51,29 @@ uthor: Hakobyan Tigran
 #define my_max(a, b) (a > b ? a : b)
 #define my_min(a, b) (a < b ? a : b)
 
- struct Activity {
-     int s_;
-       int e_;
+struct Activity {
+ int s_;
+ int e_;
 
-         Activity (int s = 0, int e = 0) :
-               s_(s),
-                   e_(e) {
+ Activity (int s = 0, int e = 0) :
+       s_(s),
+       e_(e) {
 
-                         }
+       }
  };
 
 bool operator < (const Activity &op1, const Activity &op2) {
     if(op1.e_ < op2.e_)
-          return true;
-      if(op1.e_ > op2.e_)
-            return false;
-        return op1.s_ < op2.s_;
+        return true;
+    if(op1.e_ > op2.e_)
+        return false;
+    return op1.s_ < op2.s_;
 }
 
 ostream& operator << (ostream &os, Activity &op) {
     os << "{\n" << "start = " << op.s_ << "\n";
-      os << "finish = " << op.e_ << "\n}";
-        return os;
+    os << "finish = " << op.e_ << "\n}";
+    return os;
 }
 
 const int maxN = 100007;
@@ -83,20 +83,20 @@ int f[maxN][3];
 Activity a[maxN];
 
 int lower_bound (int val) {
-    int res = -1;
+      int res = -1;
       int lo = 0, hi = n - 1;
-        while(lo <= hi) {
-              int mid = (lo + hi) >> 1;
-                  if(a[mid].s_ >= val) {
-                          res = mid;
-                                hi = mid - 1;
-                                    }
-                      else {
-                              lo = mid + 1;
-                                  }
-                        }
-
-          return res;
+      while(lo <= hi) {
+          int mid = (lo + hi) >> 1;
+          if(a[mid].s_ >= val) {
+              res = mid;
+              hi = mid - 1;
+          }
+          else {
+              lo = mid + 1;
+          }
+      }
+      
+      return res;
 }
 
 int go (int pos) {
@@ -106,36 +106,32 @@ int go (int pos) {
 }
 
 void init () {
-    scanf("%d", &n);
-      if(n == -1) exit(0);
-        for(int i = 0; i < n; ++i)
-              scanf("%d%d", &a[i].s_, &a[i].e_);
-          sort(a, a + n);
-            memset(f, -1, sizeof(f));
+  scanf("%d", &n);
+  if(n == -1) exit(0);
+  for(int i = 0; i < n; ++i)
+     scanf("%d%d", &a[i].s_, &a[i].e_);
+  sort(a, a + n);
+  memset(f, -1, sizeof(f));
 }
 
 void solve () {
   
-    int ans = go(0);
-      ans += n;
-        if(ans >= MOD)
-              ans -= MOD;
-          printf("%.8d\n", ans);
+  int ans = go(0);
+  ans += n;
+  if(ans >= MOD)
+     ans -= MOD;
+  printf("%.8d\n", ans);
 }
 
 int main () {
     int test_case;
-#ifndef ONLINE_JUDGE
-      IN("/home/tigran/Desktop/Debug/input.txt");
-        OUT("/home/tigran/Desktop/Debug/output.txt");
-#endif
 
-
-          while(true) {
-                init();
-                    solve();
-                      }
-            return 0;
+    while(true) {
+      init();
+      solve();
+    }
+    
+    return 0;
 }
 
 
