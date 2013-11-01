@@ -118,10 +118,6 @@ void solve () {
 
 int main () {
   int test_case;
-#ifndef ONLINE_JUDGE
-  IN("/home/tigran/Desktop/Debug/input.txt");
-  OUT("/home/tigran/Desktop/Debug/output.txt");
-#endif
   while(scanf("%d%d", &n, &m) && n + m != 0) {
     init();
     solve();
