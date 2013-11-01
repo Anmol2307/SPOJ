@@ -72,10 +72,6 @@ long long go (int v, int k) {
 
 int main () {
   int test_case;
-#ifndef ONLINE_JUDGE
-  IN("/home/tigran/Desktop/Debug/input.txt");
-  OUT("/home/tigran/Desktop/Debug/output.txt");
-#endif
 
   while(scanf("%d%d", &N, &K) == 2 && N != -1 && K != -1) {
     int a;
