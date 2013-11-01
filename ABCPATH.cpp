@@ -78,11 +78,6 @@ int dfs (int x, int y) {
 
 int main () {
 
-#ifndef ONLINE_JUDGE
-  IN("/home/tigran/Desktop/Debug/input.txt");
-  OUT("/home/tigran/Desktop/Debug/output.txt");
-#endif
-
   int test_id(0);
 
   while(scanf("%d%d", &n, &m)) {
