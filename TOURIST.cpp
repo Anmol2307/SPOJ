@@ -128,10 +128,6 @@ int go (int i, int j, int k) {
 
 int main () {
   int test_case;
-#ifndef ONLINE_JUDGE
-  IN("/home/tigran/Desktop/Debug/input.txt");
-  OUT("/home/tigran/Desktop/Debug/output.txt");
-#endif
   scanf("%d", &test_case);
 
   while(test_case--) {
