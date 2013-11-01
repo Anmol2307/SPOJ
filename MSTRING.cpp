@@ -119,13 +119,7 @@ void solve () {
 
 int main () {
   int test_case;
-#ifndef ONLINE_JUDGE
-  IN("/home/tigran/Desktop/Debug/input.txt");
-  OUT("/home/tigran/Desktop/Debug/output.txt");
-  scanf("%d", &test_case);
-#else
   test_case = 1;
-#endif
 
   while(test_case--) {
     init();
